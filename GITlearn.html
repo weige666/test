@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GIT学习教程</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>GIT学习教程</h1>
+<h2>一、Git简介</h2>
+<h3>1.1 特点：git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理</h3>
+<pre><code>分布式相比于集中式的最大区别在于开发者可以提交到本地，每个开发者通过克隆（git clone），在本地机器上拷贝一个完整的Git仓库。
+</code></pre>
+
+<h3><img src="https://i.imgur.com/ROElqxC.png" /></h3>
+<h3>1.2 功能</h3>
+<pre><code>从一般开发者的角度来看，git有以下功能：
+1.从服务器上克隆完整的Git仓库（包括代码和版本信息）到单机上。
+2.在自己的机器上根据不同的开发目的，创建分支，修改代码。
+3.在单机上自己创建的分支上提交代码。
+4.在单机上合并分支。
+5.把服务器上最新版的代码fetch下来，然后跟自己的主分支合并。
+6.生成补丁（patch），把补丁发送给主开发者。
+7.看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突的方法，开发者之间可以使用pull命令解决冲突，解决完冲突之后再向主开发者提交补丁。
+从主开发者的角度（假设主开发者不用开发代码）看，git有一下功能：
+1.查看邮件或者通过其他方式查看一般开发者的提交状态。
+2.打上补丁，解决冲突（可以自己解决，也可以要求开发者之间解决以后再重新提交，如果是开源项目，还要决定哪些补丁有用，哪些不用）。
+3.向公共服务器提交结果，然后通知所有开发人员。
+优点:
+    1.适合分布式开发，强调个体。
+    2.公共服务器压力和数据量都不会太大
+    3.速度快、灵活。
+    4.任意两个开发者之间可以很容易的解决冲突。
+    5.任意两个开发者之间可以很容易的解决冲突。
+    6.离线工作。
+缺点：
+    1.资料少
+    2.学习周期相对而言比较长。
+    3.不符合常规思维。
+    4.代码保密性差，一旦开发者把整个库克隆下来就可以完成公开所有代码和版本信息。
+</code></pre>
+
+<h3>1.3 小结</h3>
+<pre><code>Git是分布式版本控制系统，那么他就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在自己的电脑上。既然每个人的电脑都有一个完整的版本库，那多个人如何协作呢?比如说自己在电脑上了文件A，其他人也在电脑上改了文件A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。
+
+下载地址：https://git-scm.com/download/win
+</code></pre>
+
+<h2>二 GIT操作步骤</h2>
+<h3>2.1 填写用户名和邮箱</h3>
+<h3><img src="https://i.imgur.com/O9dYiPX.png" /></h3>
+<pre><code>Git是一个分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。
+注意：git config -global参数，有了这个参数，标识你这台机器上所有的Git参考都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。
+</code></pre>
+
+<h3>2.2 创建版本库</h3>
+<h3><img src="https://i.imgur.com/6FES78n.png" /></h3>
+<pre><code>版本库repository，可以简单的理解为一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改，删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻还可以将文件“还原”。
+重点：通过命令 git init 把这个目录变成GIT可以管理的仓库（GIT INIT）
+</code></pre>
+
+<h3><img src="https://i.imgur.com/UefdDsf.png" /></h3>
+<h3>2.3 把文件添加到版本库中</h3>
+<pre><code>首先要明确下，所有的版本控制系统，只能跟踪文本文件的改动，比如txt文件，网页，所有程序的代码等，Git也不例外，版本控制系统更可以告诉你每次的改动，但是图片，视频这些二进制文件，虽能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是知道图片从1kb变成2kb，但到底改了啥，版本控制也不知道。
+</code></pre>
+
+<h3><img src="https://i.imgur.com/qVzfGi0.png" /></h3>
+<pre><code>在版本库中创建一个记事本文件readme.txt
+第一步:使用git add readme.txt 添加到暂存区里面去
+第二步：用命令 git commit 告诉Git，把文件提交到仓库。
+第三步：用命令 git status 查看文件是否提交。
+</code></pre>
+
+<h3>2.4 远程仓库</h3>
+<pre><code>在了解之前，先注册github账号（https://github.com）
+由于你的本地Git仓库和github仓库之间的创始是通过SSH加密的，所以需要一点设置：
+
+第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过如下命令，如果没有的话，打开命令行，输入如下命令：
+ssh-keygen -t rsa -C &quot;xxx@qq.com&quot;
+
+第二步：登录github，打开&quot;settings&quot;中的SSH Keys页面，然后点击&quot;Add SSH Key&quot;，天上任意的title，在Key文本框里黏贴id_rsa.pub文件的内容。
+</code></pre>
+
+<h3><img src="https://i.imgur.com/dEc4Snq.png" /></h3>
+<h3>2.5 添加远程库</h3>
+<pre><code>现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。
+
+首先，登录github上，然后在右上角找到&quot;create a new repo&quot;创建一个新的仓库。如下：
+</code></pre>
+
+<h3><img src="https://i.imgur.com/qmVADIp.png" /></h3>
+<pre><code>在Repository name填上名字，其他保持默认设置，点击&quot;Create repository&quot;按钮，就成功地创建了一个新的Git仓库
+</code></pre>
+
+<h3>2.6 将master分支推送到github的仓库中</h3>
+<pre><code>1.连接自己的github
+    git remote add origin https://github.com/xxx/xxx.git
+2.推送master分支
+    git push -u origin master
+</code></pre>
+
+<h3><img src="https://i.imgur.com/FCPRHQJ.png" /></h3>
+<pre><code>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令，推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了，上面的要输入github的用户名和密码如下所示：
+
+把本地库的内容推送到远程。
+目前，在GitHub上的这个testgit仓库还是空的，GitHub告诉我们，可以在这个参考克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
+现在，我们根据GitHub的提示，在本地的testgit仓库下运行命令：
+    git push 
+实际上是把当前分支master推送到远程（git push -u orign master 第一次上次需要加上-u）
+
+再次推送文件只需要把文件拷贝到你建立的库文件夹下然后推送到github：
+    1. git add helloworld.txt 添加文件到缓存
+    2. git commit -m &quot;helloworld&quot; 提交文件到本地库
+    3. git push origin master 推送master分支到远程库
+</code></pre>
+
+<h3><img src="https://i.imgur.com/M0vY8Sl.png" /></h3>
+<pre><code>注意：如果不在已经建立的库目录下推送文件则需要在当前目录下再次建立一个文件仓库按照上述教程来推送文件。
+</code></pre>
+
+<h2>三 版本更新</h2>
+<h3>3.1介绍</h3>
+<pre><code>版本控制：是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。
+</code></pre>
+
+<h3>3.2 修改文件</h3>
+<pre><code>在testgit目录下新建一个记事本文件readme.txt内容如下：helloworld
+通过: 
+    1.git add readme.txt
+    2.git commit -m &quot;readme提交&quot;进行提交
+    3.git status 查看状态
+    4.修改readme.txt中的内容为hellogirls，在git status查看
+</code></pre>
+
+<h3><img src="https://i.imgur.com/vEIORwI.png" /></h3>
+<pre><code>    5.重复1、2步骤进行提交
+</code></pre>
+
+<h3>3.3 版本回退</h3>
+<h4>1.查看历史记录</h4>
+<pre><code>如上，我们已经学会了修改文件，我们可以使用命令git log 查看历史记录，如下
+</code></pre>
+
+<h3><img src="https://i.imgur.com/i1Qm2ar.png" /></h3>
+<pre><code>如果嫌上面显示的信息太多的话，我们可以使用命令git log --pretty=oneline 
+</code></pre>
+
+<h4>2.版本回退操作</h4>
+<pre><code>版本回退操作有2中命令：
+    1.git reset --hard HEAD^ 退到上上个版本只需把HEAD^改成HEAD^^，以此类推。
+    2.git reset --hard HEAD~100 回退100个版本。
+    3.git reset --hard 版本号（通过git reglog 可以查看版本号如：6fce613）
+        6fce613 (origin/master) HEAD@{1}: commit: 修改提交
+        556b548 (HEAD -&gt; master) HEAD@{2}: commit: 修改
+        742fe14 HEAD@{3}: commit: 内容修改
+        7d3e801 HEAD@{4}: commit: helloworld2
+        d6676ca HEAD@{5}: commit: helloworld
+        cd3eea8 HEAD@{6}: commit (initial): readme.txt提交
+</code></pre>
+
+<h4>3.理解工作区与暂存区的区别</h4>
+<pre><code>工作区：就是你在电脑上看到的目录，比如目录下testgit里的文件.或者以后需要在新建的目录文件等等都属于工作区范畴。
+版本库(Repository)： 工作区有一个隐藏目录.git,这个不属于工作区，这是版本库。其中版本库里面存了很多东西，其中最重要的就是stage(暂存区),还有Git为我们自动创建了第一个分支master,以及指向master的一个指针HEAD。
+
+之前我们使用Git提价文件到版本库有两步：
+    第一步：使用 git add 把文件添加进去，实际上就是把文件添加到暂存区
+    第二步：使用 git commit 提交更改，实际就是把暂存区的所有内容提交到当前分支上。
+</code></pre>
+
+<h4>4.GIT撤销修改和删除文件操作</h4>
+<pre><code>1.撤销修改： 
+    我们先通过命令查看如下：
+        cat readme.txt
+
+    我在位提交之前，我发现添加的内容有误，所以我得马上恢复以前的版本，现在我可以有如下几种方法可以做修改：
+    第一：如果我知道要删掉哪些内容的话，直接手动更改去掉那些需要的文件，然后add添加到暂存区，最后commit掉。
+    第二：我可以按以前的方法直接恢复到上一个版本。使用git reset --hard HEAD^
+    但是现在我不想使用上面的2种方法：
+    第三种：git checkout -- readme.txt
+    注意：第三种方法只能撤销到加入缓存之后，一定要有--，不要就是创建分支
+2.删除文件
+    假如我现在版本库testgit目录添加一个文件b.txt，然后提交，如下：
+        rm helloworld2.txt
+        git checkout -- helloworld2.ext
+</code></pre>
+
+<h2>四 常见的错误和命令</h2>
+<h3>错误</h3>
+<h3>1.fatal:remote origin already exists</h3>
+<h3><img src="https://i.imgur.com/8GnadMH.png" /></h3>
+<h3>2.Permission denied（publickey）</h3>
+<h3><img src="https://i.imgur.com/r3w4ZWZ.png" /></h3>
+<h3>3.error:failed to push som refs to ......</h3>
+<h3><img src="https://i.imgur.com/kx2A5It.png" /></h3>
+<h3>命令</h3>
+<pre><code>使用git在本地创建一个项目的过程
+1. makdir hello-world   //创建一个项目hello-world
+2. cd hello-world   //打开这个项目
+3. git init //初始化，交个git管理
+4. touch README
+5. git add README   //更新README文件
+6. git commit -m &quot;注释&quot; // 提交更新，并注释信息
+7. git remote add origin git@github.com:weige666/hello-world.git    //连接远程github项目
+8. git push -u origin master    // 将本地项目更新到github项目上去
+</code></pre>
+
+<h3>gitconfig配置文件</h3>
+<pre><code>Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面，这些变量可以被存储在三个不同的位置。   1./etc/gitconfig文件：包含了适用于系统所有用户和所有库的值。如果你传递参数选项'--system'给gitconfig。它明确的读和写这个文件。
+    2.~/.gitconfig文件：具体到你的用户。你可以通过传递-global选项使Git读或写这个特定的文件。
+    3.位于git目录的config文件（也就是.git/config）:无论你当前在用的库是什么，特定只想该单一的库。每个级别重写前一个级别的值。因此，在git/config中的值覆盖了在/etc/gitconfig中的同一个值。
+    在Windows系统中，Git在$HOME目录中查找.gitconfig文件（对大多数人来说，位于C:\Documents and Settings\$USER 下）。它也会查找/etc/gitconfig。尽管它是相对于Msys根目录的。这可能是你在Windows中运行安装程序时决定安装Git的任何地方。
+</code></pre>
+
+<h3>配置相关信息</h3>
+<pre><code>1.当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：
+        $ git config --global user.name &quot;John Doe&quot;  
+        $ git config --global user.email johndoe@example.com    
+2.你的编辑器(Your Editor)  
+    现在，你的标识已经设置，你可以配置你的缺省文本编辑器，Git在需要你输入一些消息时会使用该文本编辑器。缺省情况下，Git使用你的系统的缺省编辑器，这通常可能是vi或者vim。如果你想使用一个不同的文本编辑器，例如Emacs，你可以做如下操作：
+        $ git config --global core.editor emacs 
+3.检查你的设置(Checking Your Settings)  
+    如果你想检查你的设置，你可以使用git config --list命令来列出Git可以在该处找到的所有的设置:  
+        $ git config --list  
+    你也可以查看Git认为的一个特定的关键字目前的值，使用如下命令
+        git config {key}:  
+        $ git config user.name
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
